@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(130, 238, 238, 0.200);
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(130, 238, 238, 0.200);
+    height: 100px;
+    gap: 50px;
+}
+
+
+
+.nav{
+    overflow: auto;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;   
+    gap: 10px;
+}
+
+#box{
+    display: flex;
+    width: 20vw;
+    padding: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#box:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+#logo img{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 15vh;
+    height: 15vh;
+}
+
+#add-tarefa{
+    margin: 15px 0px 15px 15px;
+    width: 85vw;
+    height: 40px;
+    border-radius: 4px;
+}
+
+#btn-add-tarefa{
+    cursor: pointer;
+    height: 40px;
+    color: white;
+    width: 10vw;
+    background-color: rgb(30, 170, 123);
+    border: 0.05rem solid black;
+    border-radius: 4px;
+}
+
+#btn-add-tarefa2{
+    cursor: pointer;
+    height: 40px;
+    color: white;
+    width: 10vw;
+    background-color: rgb(30, 170, 123);
+    border: 0.05rem solid black;
+    border-radius: 4px;
+}
+
+
+#title{
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 4px;
+     margin-left: 16px;
+    margin-right: 16px;
+    padding: 10px;
+    color: rgb(0, 89, 255);
+    background-color: rgba(194, 225, 247, 0.849);
+}
+
+.btns{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: repeat(10,1fr);
+    justify-content: stretch;
+    align-items: center;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+#btn-section{
+    display: flex;
+    align-content: center;
+}
+
+.section{  
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-items: stretch;
+    justify-content: stretch;
+    text-align: center;
+    margin-left: 16px;
+    margin-right: 16px;
+    align-items: stretch;
+    align-content: stretch;
+    grid-column-gap: 2px;
+}
+
+
+.section div{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(194, 225, 247, 0.849);
+}
+
+.title-main{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-left: 16px;
+    margin-right: 16px;
+    gap: 2px;
+}
+
+#box-title{
+    margin-top: 5px;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(194, 225, 247, 0.849);
+    border-radius: 5px;
+}
+
+
+#add-tarefa-2{
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+
+#add-tarefa-termino, #add-tarefa-responsavel{
+    height: 40px;
+    width: 25vw;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#box-title2{
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(194, 225, 247, 0.849);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+
+    <title>Lista de tarefas</title>
+</head>
+    <body>
+        <header class="header">
+            <span id="logo"><img src="img/Blue Creative Rectangle Shape 3D Startup Logo.png" alt=""></span>
+                <ul class="nav">
+                    <a href="favorites.html" id="box">Favoritos</a>
+                    <a href="today.html" id="box">Hoje</a>
+                    <a href="actives.html" id="box">Minhas Atividades</a>
+                    <a href="proxActives.html" id="box">Próximas Atividades</a>
+                </ul>
+        </header>
+        
+        <input type="text" maxlength="100" id="add-tarefa">
+        <button id="btn-add-tarefa">Adicionar</button>
+            <div id="add-tarefa-2">
+                <p id="box-title2">Término esperado:</p>
+                <input type="date" required="required" maxlength="10" name="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2014-02-18" id="add-tarefa-termino" placeholder= none />
+                <p id="box-title2">Responsável:</p>
+                <input id="add-tarefa-responsavel" type="text"  minlength="5" maxlength="15">
+                <button id="btn-add-tarefa2">Confirmar</button>
+            </div>
+            <h4 id="title">Atividades</h4>
+            <div class="title-main">
+                <div id="box-title"> 
+                    <input type="checkbox">
+                </div>
+                <p id="box-title">Título</p>
+                <p id="box-title">Prazo</p>
+                <p id="box-title">Término esperado</p>
+                <p id="box-title">Responsável</p>
+            </div>
+                <div class="container">
+                    <div class="section">
+                        <div class="btns">
+                            <i class="fas fa-grip-vertical" style="font-size: 30px;"></i>
+                            <input type="checkbox" style="font-size: 100px;">
+                            <i class="fas fa-comment"></i>
+                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-check-square"></i>
+                            <i class="fas fa-bars"></i>                    
+                        </div>
+                        <div id="btn-section" class="titulos">
+                        </div>
+                        <div id="btn-section" class="btn-prazo">    
+                        </div>
+                        <div class="data-termino" id="btn-section">
+                        </div>
+                        <div id="btn-section" class="responsavel" >
+                            
+                        </div>
+                    </div>
+                    <div class="section">
+                    </div>
+               </div>
+               
+
+
+
+
+
+        <script src="main.js"></script>
+        <script src="https://kit.fontawesome.com/f5ece5cbab.js" crossorigin="anonymous"></script>
+
+    </body>
+</html>
