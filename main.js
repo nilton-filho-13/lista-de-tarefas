@@ -8,6 +8,17 @@ const TextResponsible = document.querySelector('#add-tarefa-responsavel');
 const TextDeadline = document.querySelector('#add-tarefa-termino');
 const Container = document.querySelector('.container')
 const TextButtomPrazo = document.querySelector('.btn-prazo')
+const ButtonForAddTarefa2 = document.querySelector('#btn-add-tarefa2')
+const ButtonForAddNewTarefa = document.querySelector('#nova-tarefa')
+
+const Data = new Date();
+const dia = (Data.getDate());
+const mes = (Data.getMonth() + 1);
+const ano = (Data.getFullYear());
+
+const ClearTarefa = false;
+
+let cont = 0;
 
 const AdicionarTarefa = () =>{
   DisplayAddTarefa2.style.display = 'flex'
@@ -18,61 +29,140 @@ const AdicionarTarefa = () =>{
   TextAddTarefa.disabled = true;
 }
 
-const Data = new Date();
-const dia = (Data.getDate());
-const mes = (Data.getMonth() + 1);
-const ano = (Data.getFullYear());
-
-
-const ClearTarefa = false;
-
 
 document.getElementById('btn-add-tarefa').addEventListener('click', AdicionarTarefa);
 
 const ConfirmAdicionarTarefa = () => {
 
-    const DeadlineNew = TextDeadline.value.split('-')
+cont++;
 
-    if(ano === parseInt(DeadlineNew[0]) && dia - 1 === parseInt(DeadlineNew[2]) && mes === parseInt(DeadlineNew[1  ])){
-      let btnNew = document.createElement('i')
-      btnNew.classList.add("fas", "fa-square")
-      btnNew.style.color = '#FF0000';
-      TextButtomPrazo.appendChild(btnNew)
+      const DeadlineNew = TextDeadline.value.split('-')
+      const TituloTarefa = TextAddTarefa.value;
+      const TerminoTarefa = DeadlineNew;
+      const ResponsavelTarefa = TextResponsible.value;
 
-      Title.textContent = TextAddTarefa.value;
-      Responsible.textContent = TextResponsible.value;
-      Deadline.textContent = DeadlineNew[2] + ' / ' + DeadlineNew[1] + ' / ' + DeadlineNew [0];
+    
+    ButtonForAddTarefa1.style.backgroundColor = '#eee'
+    ButtonForAddTarefa1.style.color = 'black'
+    ButtonForAddTarefa1.style.cursor = 'auto';
+    ButtonForAddTarefa2.style.backgroundColor = '#eee'
+    ButtonForAddTarefa2.style.color = 'black'
+    ButtonForAddTarefa2.style.cursor = 'auto'
+    document.getElementById('btn-add-tarefa2').disabled = true;
+    document.getElementById('add-tarefa-responsavel').disabled = true;
+    document.getElementById('add-tarefa-termino').disabled = true;
 
-    } else if (ano === parseInt(DeadlineNew[0]) && dia + 1 === parseInt(DeadlineNew[2]) && mes === parseInt(DeadlineNew[1])){
-      let btnNew = document.createElement('i')
-      btnNew.classList.add("fas", "fa-exclamation-triangle")  
-      btnNew.style.color = '#ffff00';
-      TextButtomPrazo.appendChild(btnNew)
+    ButtonForAddNewTarefa.style.display = 'flex'
 
-      Title.textContent = TextAddTarefa.value;
-      Responsible.textContent = TextResponsible.value;
-      Deadline.textContent = DeadlineNew[2] + ' / ' + DeadlineNew[1] + ' / ' + DeadlineNew [0];
-
-    } else if (ano === parseInt(DeadlineNew[0]) && mes < parseInt(DeadlineNew[1])){
-      let btnNew = document.createElement('i')
-      btnNew.classList.add("fas", "fa-circle")
-      btnNew.style.color = '#00FF00';
-      TextButtomPrazo.appendChild(btnNew)
-      
-      Title.textContent = TextAddTarefa.value;
-      Responsible.textContent = TextResponsible.value;
-      Deadline.textContent = DeadlineNew[2] + ' / ' + DeadlineNew[1] + ' / ' + DeadlineNew [0];
-
-    } else{
-      alert('Digita a data certa o filho da puta')
-      ClearTarefa = true;
-    }
+    AdicionarNovoContainer(TituloTarefa,TerminoTarefa,ResponsavelTarefa,cont);
 
 
-    if(ClearTarefa === false){
-     
-    } 
 }
 
 document.getElementById('btn-add-tarefa2').addEventListener('click', ConfirmAdicionarTarefa)
 
+
+const AdicionarNovaTarefa = () =>{
+
+    ButtonForAddNewTarefa.style.display = 'none'
+
+
+    ButtonForAddTarefa2.style.backgroundColor = 'rgb(30, 170, 123)';
+    ButtonForAddTarefa2.style.color = 'white';
+    ButtonForAddTarefa2.style.cursor = 'pointer';
+    ButtonForAddTarefa1.style.display = 'none'
+    TextAddTarefa.style.width =  '95vw'
+
+    TextAddTarefa.value = ''
+    TextDeadline.value = ''
+    TextResponsible.value = ''
+
+    document.getElementById('add-tarefa').disabled = false;
+    document.getElementById('btn-add-tarefa2').disabled = false;
+    document.getElementById('add-tarefa-responsavel').disabled = false;
+    document.getElementById('add-tarefa-termino').disabled = false;
+    document.getElementById('btn-nova-tarefa').disabled = false;
+    document.getElementById('add-tarefa-termino').disabled = false;
+}
+
+
+document.getElementById('btn-nova-tarefa').addEventListener('click', AdicionarNovaTarefa)
+
+
+  
+const AdicionarNovoContainer = (TituloTarefa, TerminoTarefa, ResponsavelTarefa, cont) =>{
+
+    let divNovaSection = document.createElement("div");
+    divNovaSection.className = 'section'+ cont;
+    document.getElementsByClassName("container")[0].appendChild(divNovaSection);
+
+    let DivNovaButtons = document.createElement('div')
+    DivNovaButtons.className = "btns";
+    DivNovaButtons.innerHTML = '<i class="fas fa-grip-vertical" style="font-size: 30px;"></i> <input type="checkbox" style="font-size: 100px;"> <i class="fas fa-comment"></i> <i class="fas fa-clock"></i> <i class="fas fa-check-square"></i> <i class="fas fa-bars"></i>'
+    document.getElementsByClassName("section" + cont)[0].appendChild(DivNovaButtons)   
+    
+    let DivNovaTitulos = document.createElement('div')
+    DivNovaTitulos.id = 'btn-section';
+    DivNovaTitulos.className = 'titulos';
+    DivNovaTitulos.textContent = TituloTarefa;
+    document.getElementsByClassName("section" + cont)[0].appendChild(DivNovaTitulos)
+
+    let DivNovaButtonPrazo = document.createElement('div')
+    DivNovaButtonPrazo.id = 'btn-section';
+    DivNovaButtonPrazo.className = 'btn-prazo';
+    SituacaoPrazo(DivNovaButtonPrazo,TerminoTarefa);
+    document.getElementsByClassName("section" + cont)[0].appendChild(DivNovaButtonPrazo)
+
+    let DivNovaDateTermino = document.createElement('div')
+    DivNovaDateTermino.id = 'btn-section';
+    DivNovaDateTermino.className = 'data-termino';
+    DivNovaDateTermino.textContent = TerminoTarefa[2] + '/' + TerminoTarefa[1] + '/' + TerminoTarefa[0];
+    document.getElementsByClassName("section" + cont)[0].appendChild(DivNovaDateTermino)
+
+    let DivNovaResponsavel = document.createElement('div')
+    DivNovaResponsavel.id = 'btn-section';
+    DivNovaResponsavel.className = 'responsavel';
+    DivNovaResponsavel.textContent = ResponsavelTarefa;
+    document.getElementsByClassName("section" + cont)[0].appendChild(DivNovaResponsavel)
+
+    return;
+}
+
+const SituacaoPrazo = (DivNovaButtonPrazo, TerminoTarefa) =>{
+
+  console.log(ano)
+  console.log(dia)
+  console.log(mes)
+  console.log(TerminoTarefa)
+  
+  if(ano === parseInt(TerminoTarefa[0]) && dia - 1 === parseInt(TerminoTarefa[2]) && mes === parseInt(TerminoTarefa[1  ])){
+    let btnNew = document.createElement('i')
+    btnNew.classList.add("fas", "fa-square")
+    btnNew.style.color = '#FF0000';
+    DivNovaButtonPrazo.appendChild(btnNew)
+
+
+  } else if (ano === parseInt(TerminoTarefa[0]) && dia + 1 === parseInt(TerminoTarefa[2]) && mes === parseInt(TerminoTarefa[1])){
+    let btnNew = document.createElement('i')
+    btnNew.classList.add("fas", "fa-exclamation-triangle")  
+    btnNew.style.color = '#ffff00';
+    DivNovaButtonPrazo.appendChild(btnNew)
+
+
+  } else if (ano === parseInt(TerminoTarefa[0]) && mes < parseInt(TerminoTarefa[1])){
+    let btnNew = document.createElement('i')
+    btnNew.classList.add("fas", "fa-circle")
+    btnNew.style.color = '#00FF00';
+    DivNovaButtonPrazo.appendChild(btnNew)
+    
+
+  } else{
+    alert('Digita a data certa o filho da puta')
+    ClearTarefa = true;
+  }
+
+
+  if(ClearTarefa === false){
+   
+  } 
+}

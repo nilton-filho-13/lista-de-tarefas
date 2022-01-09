@@ -30,8 +30,8 @@ body{
 }
 
 #box{
-    display: flex;
-    width: 20vw;
+    display: inline-block;
+    width: 21.25vw;
     padding: 40px;
     text-align: center;
     align-items: center;
@@ -44,7 +44,7 @@ body{
 #box:hover{
     border: 1px solid black;
     border-radius: 5px;
-    background-color: #eee;
+    background-color: rgb(119, 202, 243);
 }
 
 #logo img{
@@ -56,7 +56,7 @@ body{
 }
 
 #add-tarefa{
-    margin: 15px 0px 15px 15px;
+    margin: 16px 0px 16px 16px;
     width: 85vw;
     height: 40px;
     border-radius: 4px;
@@ -86,7 +86,7 @@ body{
 #title{
     font-family: 'Open Sans', sans-serif;
     border-radius: 4px;
-     margin-left: 16px;
+    margin-left: 16px;
     margin-right: 16px;
     padding: 10px;
     color: rgb(0, 89, 255);
@@ -106,7 +106,7 @@ body{
     justify-content: stretch;
     align-items: center;
     margin-top: 5px;
-    gap: 5px;
+    gap: 5px
 }
 
 #btn-section{
@@ -114,7 +114,7 @@ body{
     align-content: center;
 }
 
-.section{  
+.section, .section1, .section2{  
     display: grid;
     grid-template-columns: repeat(5,1fr);
     justify-items: stretch;
@@ -128,7 +128,7 @@ body{
 }
 
 
-.section div{
+.section div, .section1 div, .section2 div{
     display: grid;
     grid-template-columns: repeat(6,1fr);
     align-items: center;
@@ -192,3 +192,25 @@ body{
 }
 
 
+.titulos, .responsavel{
+    overflow: auto;
+}
+
+
+#nova-tarefa{
+    display: none;
+    justify-content: center;
+    margin: 16px;
+}
+
+#btn-nova-tarefa{
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: rgba(194, 225, 247, 0.849);
+    outline: 2px solid rgba(194, 225, 247, 0.849);
+    outline-offset: 2px;
+    cursor: pointer;
+}
