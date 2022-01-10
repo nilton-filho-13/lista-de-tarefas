@@ -51,6 +51,7 @@ cont++;
     document.getElementById('btn-add-tarefa2').disabled = true;
     document.getElementById('add-tarefa-responsavel').disabled = true;
     document.getElementById('add-tarefa-termino').disabled = true;
+    document.getElementById('add-tarefa').disabled = true;
 
     ButtonForAddNewTarefa.style.display = 'flex'
 
@@ -71,7 +72,7 @@ const AdicionarNovaTarefa = () =>{
     ButtonForAddTarefa2.style.color = 'white';
     ButtonForAddTarefa2.style.cursor = 'pointer';
     ButtonForAddTarefa1.style.display = 'none'
-    TextAddTarefa.style.width =  '95vw'
+    TextAddTarefa.style.width =  '100vw'
 
     TextAddTarefa.value = ''
     TextDeadline.value = ''
@@ -98,7 +99,7 @@ const AdicionarNovoContainer = (TituloTarefa, TerminoTarefa, ResponsavelTarefa, 
 
     let DivNovaButtons = document.createElement('div')
     DivNovaButtons.className = "btns";
-    DivNovaButtons.innerHTML = '<i class="fas fa-grip-vertical" style="font-size: 30px;"></i> <input type="checkbox" style="font-size: 100px;"> <i class="fas fa-comment"></i> <i class="fas fa-clock"></i> <i class="fas fa-check-square"></i> <i class="fas fa-bars"></i>'
+    DivNovaButtons.innerHTML = '<button><i class="fas fa-grip-vertical" style="font-size: 30px;"></button></i> <input type="checkbox" style="font-size: 100px;"> <button><i class="fas fa-comment"></i></button> <button><i class="fas fa-clock"></i></button> <button><i class="fas fa-check-square"></i></button> <button><i class="fas fa-bars"></button></i>'
     document.getElementsByClassName("section" + cont)[0].appendChild(DivNovaButtons)   
     
     let DivNovaTitulos = document.createElement('div')

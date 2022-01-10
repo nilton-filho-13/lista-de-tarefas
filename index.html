@@ -23,15 +23,20 @@
                 </ul>
         </header>
         
-        <input type="text" maxlength="100" id="add-tarefa" placeholder=" Digite uma nova tarefa.">
-        <button id="btn-add-tarefa">Adicionar</button>
-            <div id="add-tarefa-2">
-                <p id="box-title2">Término esperado:</p>
-                <input type="date" required="required"  maxlength="10" name="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2014-02-18" id="add-tarefa-termino" placeholder= "Oi vadia" />
-                <p id="box-title2">Responsável:</p>
-                <input id="add-tarefa-responsavel" type="text"  minlength="5" maxlength="15" placeholder=" Digite o responsável pela tarefa">
-                <button id="btn-add-tarefa2">Confirmar</button>
+        <div id="conteudo">
+            <div style="margin-top: 10px; margin-bottom: 10px; margin-left: 16px; margin-right: 16px; display: flex; gap: 1%;">
+                <input type="text" maxlength="100" id="add-tarefa" placeholder=" Digite uma nova tarefa.">
+                <button id="btn-add-tarefa">Adicionar</button>
             </div>
+        <div id="add-tarefa-2">
+            <div id="box-title2">
+                <p >Término esperado:</p>
+                <input type="date" required="required"  maxlength="10" name="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2014-02-18" id="add-tarefa-termino" placeholder= "Oi vadia" />
+                <p>Responsável:</p>
+                <input id="add-tarefa-responsavel" type="text"  minlength="5" maxlength="15" placeholder=" Digite o responsável pela tarefa">
+            </div>
+                <button id="btn-add-tarefa2">Confirmar</button>
+        </div>
 
             <div id="nova-tarefa">
               <button id="btn-nova-tarefa">Criar nova tarefa</button>  
@@ -68,6 +73,13 @@
                         </div>
                     </div>
                 </div>
+
+
+            <footer id="footer">
+                <p>Copyright 2022 - All rights reserved</p>
+                <p>Feito por: Nilton Filho</p>
+            </footer>
+        </div>
         <script src="main.js"></script>
         <script src="https://kit.fontawesome.com/f5ece5cbab.js" crossorigin="anonymous"></script>
 
